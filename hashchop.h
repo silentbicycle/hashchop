@@ -29,7 +29,7 @@ T *hashchop_new(unsigned int bits);
  * Returns OVERFLOW if the data is too large to store (and should be added
  * incrementally, in smaller pieces), FULL if the buffer is full (and should
  * be flushed with hashchop_poll), or OK on success. */
-hashchop_res hashchop_sink(T *hc, unsigned char *data, size_t length);
+hashchop_res hashchop_sink(T *hc, const unsigned char *data, size_t length);
 
 /* If available, copy the next chunk of chopped data into DATA, a buffer of
  * at least (*LENGTH) bytes, and write the chunk length in (*LENGTH).

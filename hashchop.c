@@ -80,7 +80,7 @@ T *hashchop_new(unsigned int bits) {
  * Returns OVERFLOW if the data is too large to store (and should be added
  * incrementally, in smaller pieces), FULL if the buffer is full (and should
  * be flushed with hashchop_poll first), or OK on success. */
-hashchop_res hashchop_sink(T *hc, unsigned char *data, size_t length) {
+hashchop_res hashchop_sink(T *hc, const unsigned char *data, size_t length) {
     if (length > hc->max) return HASHCHOP_ERROR_OVERFLOW;
     if (hc->ct > hc->limit) return HASHCHOP_ERROR_FULL;
     memcpy(hc->buf + hc->ct, data, length);
