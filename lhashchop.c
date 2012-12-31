@@ -26,7 +26,7 @@ typedef struct {
  * Returns a hashchopper or (nil, "Bad bits argument.").*/
 static int lhashchop_new(lua_State *L) {
     int bits = luaL_checkint(L, 1);
-    size_t buf_sz = 1 << bits;
+    size_t buf_sz = 1 << (bits + 2);
     LHashchop *lh = lua_newuserdata(L, sizeof(*lh) + buf_sz);
     if (lh == NULL) {
         /* FIXME If lua_newuserdata's alloc fails, does lua longjmp
@@ -66,7 +66,7 @@ static int lhashchop_sink(lua_State *L) {
  * Returns the chunk string, or (nil, error code). */
 static int lhashchop_poll(lua_State *L) {
     CHECK_HC(1);
-    size_t sz = 0;
+    size_t sz = lh->buf_sz;
     hashchop_res res = hashchop_poll(hc, lh->buf, &sz);
     if (res == HASHCHOP_OK) {
         lua_pushlstring(L, (char *)lh->buf, sz);
