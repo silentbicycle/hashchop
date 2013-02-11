@@ -1,4 +1,4 @@
-CFLAGS += -std=c99 -Wall -g -O2
+CFLAGS += -std=c99 -Wall -g -O2 -fPIC
 
 # These are only necessary if you build the Lua library.
 LUA_LIBPATH=	/usr/local/lib/
