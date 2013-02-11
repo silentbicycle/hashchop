@@ -1,6 +1,8 @@
 #ifndef HASHCHOP_H
 #define HASHCHOP_H
 
+#include <stdint.h>
+
 /* Malloc/free-like functions, to replace malloc and free. */
 typedef void *(hashchop_malloc_cb)(size_t sz);
 typedef void (hashchop_free_cb)(void *p, size_t sz);
@@ -22,7 +24,7 @@ typedef enum HASHCHOP_RES {
 #define T hashchop
 
 /* Create and return a new hashchopper. Returns NULL on error (bad BITS value). */
-T *hashchop_new(unsigned int bits);
+T *hashchop_new(uint8_t bits);
 
 /* Sink LENGTH bytes from DATA into the hashchopper.
  * 

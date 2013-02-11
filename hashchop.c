@@ -28,7 +28,7 @@ typedef uint8_t UC;
 #define T hashchop
 
 struct hashchop {
-    UI bits;                    /* bits used for mask */
+    uint8_t bits;               /* bits used for mask */
     UI mask;                    /* bitmask for matches */
     UI min;                     /* min chunk size */
     UI max;                     /* max chunk size */
@@ -56,7 +56,7 @@ void hashchop_set_malloc(hashchop_malloc_cb *m, hashchop_free_cb *f) {
 #define HASHCHOP_BIT_SKEW 2
 
 /* Create and return a new hashchopper. Returns NULL on error (bad BITS value). */
-T *hashchop_new(unsigned int bits) {
+T *hashchop_new(uint8_t bits) {
     if (bits < HASHCHOP_MIN_BITS || bits > HASHCHOP_MAX_BITS) return NULL;
 
     UI max = 1 << (bits + HASHCHOP_BIT_SKEW);
