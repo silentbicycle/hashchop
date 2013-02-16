@@ -23,6 +23,9 @@ be factored out better.
 
 This will make the test suite (`test`) and a simple benchmark (`bench`).
 
+If you want to build this for use from Lua (the main use case, so far),
+use `luarocks make $ROCKSPEC`, or `make lua`.
+
 
 ## Use
 

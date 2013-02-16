@@ -27,6 +27,9 @@ typedef uint32_t UI;
 typedef uint8_t UC;
 #define T hashchop
 
+uint8_t hashchop_version_major = 0;
+uint8_t hashchop_version_minor = 8;
+
 struct hashchop {
     uint8_t bits;               /* bits used for mask */
     UI mask;                    /* bitmask for matches */

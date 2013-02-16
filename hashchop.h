@@ -8,6 +8,10 @@ typedef void *(hashchop_malloc_cb)(size_t sz);
 typedef void (hashchop_free_cb)(void *p, size_t sz);
 void hashchop_set_malloc(hashchop_malloc_cb *m, hashchop_free_cb *f);
 
+/* Major & minor version number. */
+extern uint8_t hashchop_version_major;
+extern uint8_t hashchop_version_minor;
+
 /* Opaque hashchop handle. */
 typedef struct hashchop hashchop;
 
