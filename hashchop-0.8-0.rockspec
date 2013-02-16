@@ -1,7 +1,7 @@
 package = "hashchop"
 version = "0.8-0"
 source = {
-    url = "https://github.com/silentbicycle/hashchop/archive/master.zip",
+    url = "https://github.com/silentbicycle/hashchop/archive/v0.8.zip",
 }
 description = {
     summary = "Rolling-hash-based data stream chopper",
