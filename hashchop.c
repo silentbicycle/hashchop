@@ -19,6 +19,7 @@
 #include <sys/types.h>
 #include <stdint.h>
 #include <string.h>
+#include <strings.h>
 #include <assert.h>
 #include "hashchop.h"
 
